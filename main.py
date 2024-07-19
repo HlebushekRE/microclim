@@ -46,36 +46,44 @@ def to_df(data):
 
     return df
 
+def df_reset_index(list_df):
+    for i in range(len(list_df)):
+        list_df[i] = list_df[i].reset_index(drop=True)
+
+    return list_df
 
 # Корпус D (700k)
-data = get_data('D')
-df_D = to_df(data)
+#data = get_data('D')
+#df_D = to_df(data)
 
 # Корпус E (152k)
 data = get_data('E')
 df_E = to_df(data)
 
 # Корпус A (1168k)
-data = get_data('A')
-df_A = to_df(data)
+#data = get_data('A')
+#df_A = to_df(data)
 
 # Корпус S (845k)
-data = get_data('S')
-df_S = to_df(data)
+#data = get_data('S')
+#df_S = to_df(data)
 
 # Корпус B (244k)
-data = get_data('B')
-df_B = to_df(data)
+#data = get_data('B')
+#df_B = to_df(data)
 
 # Корпус L (833k)
-data = get_data('L')
-df_L = to_df(data)
+#data = get_data('L')
+#df_L = to_df(data)
 
 # Корпус M (799k)
-data = get_data('M')
-df_M = to_df(data)
+#data = get_data('M')
+#df_M = to_df(data)
 
 
 
 df_E = date_format(df_E)
-print(df_E[0])
+df_E = df_reset_index(df_E)
+
+
+print(df_E[2])
